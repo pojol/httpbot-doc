@@ -2,7 +2,7 @@
 description: httpbot 是一个基于线性时间触发，可编排的http测试机器人。
 ---
 
-# Intro
+# 介绍
 
 {% hint style="info" %}
 文档基于 \`v1.1.10\` 版本编写
