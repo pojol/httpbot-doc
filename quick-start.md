@@ -4,53 +4,11 @@ description: 本页将简单介绍如何使用httpbot进行测试
 
 # 快速开始
 
-
+[Code](https://github.com/pojol/httpbot/tree/master/sample)
 
 ```go
-
-var (
-	help bool
-
-	// robot number
-	num int
-
-	// lifttime 生命周期
-	lifetime int
-
-	// increase 增量
-	increase bool
-)
-
-func initFlag() {
-	flag.BoolVar(&help, "h", false, "this help")
-
-	flag.BoolVar(&increase, "increase", false, "incremental robot in every second")
-	flag.IntVar(&lifetime, "lifetime", 60, "life time by second")
-	flag.IntVar(&num, "num", 0, "robot number")
-}
-
 func main() {
-
-	initFlag()
-
-	flag.Parse()
-	if help {
-		flag.Usage()
-		return
-	}
-
-	fmt.Println("bot num", num)
-	fmt.Println("increase", increase)
-	fmt.Println("lifetime", lifetime)
-
 	rand.Seed(time.Now().UnixNano())
-
-	mode := ""
-	if increase {
-		mode = factory.FactoryModeIncrease
-	} else {
-		mode = factory.FactoryModeStatic
-	}
 
   // 覆盖率报告用，传入的match url 代表需要测试的api请求地址列表。
 	var matchUrls []string
